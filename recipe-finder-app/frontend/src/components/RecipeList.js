@@ -6,7 +6,7 @@ function RecipeList() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/recipes").then((response) => setRecipes(response.data));
+    axios.get("https://fictional-space-rotary-phone-x55g44vvpw4vc9xpj-5000.app.github.dev/api/recipes").then((response) => setRecipes(response.data));
   }, []);
 
   return (

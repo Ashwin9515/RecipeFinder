@@ -7,7 +7,7 @@ function RecipeDetails() {
   const [recipe, setRecipe] = useState(null);
 
   useEffect(() => {
-    axios.get(`/api/recipes/${id}`).then((response) => setRecipe(response.data));
+    axios.get(`https://fictional-space-rotary-phone-x55g44vvpw4vc9xpj-5000.app.github.dev/api/recipes/${id}`).then((response) => setRecipe(response.data));
   }, [id]);
 
   if (!recipe) return <div>Loading...</div>;

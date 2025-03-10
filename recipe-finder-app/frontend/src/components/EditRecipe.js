@@ -11,22 +11,21 @@ function EditRecipe() {
 
   useEffect(() => {
     axios.get(`/api/recipes/${id}`).then((response) => {
-      const recipe = response.data;
-      setName(recipe.name);
-      setIngredients(recipe.ingredients);
-      setInstructions(recipe.instructions);
+      const { name, ingredients, instructions } = response.data;
+      setName(name);
+      setIngredients(ingredients);
+      setInstructions(instructions);
     });
   }, [id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .put(`/api/recipes/${id}`, { name, ingredients, instructions })
-      .then(() => navigate("/"));
+    axios.put(`https://fictional-space-rotary-phone-x55g44vvpw4vc9xpj-5000.app.github.dev/api/recipes/${id}`, { name, ingredients, instructions })
+         .then(() => navigate("/"));
   };
 
   const handleDelete = () => {
-    axios.delete(`/api/recipes/${id}`).then(() => navigate("/"));
+    axios.delete(`https://fictional-space-rotary-phone-x55g44vvpw4vc9xpj-5000.app.github.dev/api/recipes/${id}`).then(() => navigate("/"));
   };
 
   return (
